@@ -1,0 +1,59 @@
+{
+    "name": "neography7/easy-response",
+    "description": "Standardized response for REST APIs with easy usability.",
+    "version": "1.0.0",
+    "keywords": [
+        "neography7",
+        "easy-response"
+    ],
+    "homepage": "https://github.com/neography7/easy-response",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "İlker Akyel",
+            "email": "ilkerakyel97@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0"
+    },
+    "require-dev": {
+        "nunomaduro/collision": "^7.4",
+        "orchestra/testbench": "^8.5",
+        "phpunit/phpunit": "^10.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Neography7\\EasyResponse\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Neography7\\EasyResponse\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Neography7\\EasyResponse\\EasyResponseServiceProvider"
+            ],
+            "aliases": {
+                "EasyResponse": "Neography7\\EasyResponse\\EasyResponseFacade"
+            }
+        }
+    }
+}
